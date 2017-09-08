@@ -110,6 +110,8 @@ function getMockConfigFilenames() {
  */
 function appendApidocRoute(routeConfig, mockInfo) {
     routeConfig['GET /_apidoc'] = function(request, response, next) {
+        mockRoute.enableCors(request, response);
+
         if (request.query.map) {
             response.jsonp(mockInfo.mockConfigMap);
         } else {
