@@ -1,0 +1,15 @@
+{
+  "name": "mock-http-api-example",
+  "version": "0.1.0",
+  "description": "mock-http-api-example",
+  "main": "express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sun",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mock-http-api": "^1.0.0"
+  }
+}

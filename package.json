@@ -1,0 +1,31 @@
+{
+  "name": "mock-http-api",
+  "version": "1.0.0",
+  "description": "给 express 添加 mock 接口的功能",
+  "main": "src/mock-http-api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ufologist/mock-http-api.git"
+  },
+  "keywords": [
+    "mock",
+    "http",
+    "api"
+  ],
+  "bugs": {
+    "url": "https://github.com/ufologist/mock-http-api/issues"
+  },
+  "homepage": "https://github.com/ufologist/mock-http-api",
+  "author": "Sun",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^1.7.0",
+    "express": "^4.15.4",
+    "glob": "^7.1.2",
+    "merge": "^1.2.0",
+    "mock-route": "^1.1.0"
+  }
+}
