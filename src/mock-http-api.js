@@ -28,22 +28,7 @@ function getMockInfo(filenames) {
     var allMockConfig = {};
 
     filenames.forEach(function(filename) {
-        var ext = path.extname(filename);
-
-        var mockConfig = {};
-        try {
-            if (ext == '.json') {
-                mockConfig = mockRoute.getMockConfig(filename);
-            } else if (ext == '.js') {
-                // https://nodejs.org/api/modules.html#modules_require_cache
-                delete require.cache[path.resolve(filename)];
-                mockConfig = require(filename);
-            }
-        } catch (error) {
-            console.error('HTTP 接口的 Mock 数据配置有问题', filename);
-            console.error(error);
-        }
-
+        var mockConfig = mockRoute.getMockConfig(filename);
         mockConfigMap[filename] = mockConfig;
         allMockConfig = merge.recursive(true, allMockConfig, mockConfig);
     });
