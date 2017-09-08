@@ -102,7 +102,7 @@ function getMockConfigFilenames() {
  * 追加 `/_apidoc` 路由, 用于查看所有的 Mock 接口配置
  * 
  * 例如
- * -`http://localhost:8000/_apidoc`       // 查看所有 Mock 接口的配置
+ * - `http://localhost:8000/_apidoc`       // 查看所有 Mock 接口的配置
  * - `http://localhost:8000/_apidoc?map=1` // 查看所有 Mock 文件与其 Mock 接口配置的映射关系
  * 
  * @param {object} routeConfig
