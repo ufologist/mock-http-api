@@ -26,6 +26,10 @@
                     "name": "@cname"
                 }
             }
+        },
+        "GET /users/:username": {
+            "proxy": "https://api.github.com",
+            "response": {}
         }
     }
 }
