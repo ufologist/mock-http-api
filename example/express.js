@@ -21,7 +21,7 @@ app.use(function(request, response, next) {
         if (accessControlRequestHeaders) {
             header['Access-Control-Allow-Headers'] = accessControlRequestHeaders;
         }
-        response.set(header).status(200).end();
+        response.status(200).set(header);
     }
     next();
 });
