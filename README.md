@@ -49,6 +49,12 @@ app.listen(3000, function() {
 * `http://localhost:3000/api/user` 查看具体的 Mock 接口
 
   `mock/http/api/user.json` 定义了该 Mock 接口
+* `http://localhost:3000/users/ufologist` 查看代理的 Mock 接口
+
+  `mock/http/api/user.json` 定义了该 Mock 接口
+* `http://localhost:3000/github` 查看通过代理实现 Mock 路由
+
+  `mock/http/api/user.json` 定义了该 Mock 接口
 
 ## 谁在使用
 

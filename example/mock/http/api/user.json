@@ -27,8 +27,15 @@
                 }
             }
         },
-        "GET /users/:username": {
+        "GET /users/:username": { // 代理的 Mock 接口
             "proxy": "https://api.github.com",
+            "response": {}
+        },
+        "GET /github": { // 通过代理实现 Mock 路由
+            "proxy": {
+                "target": "https://github.com",
+                "ignorePath": true
+            },
             "response": {}
         }
     }
