@@ -127,7 +127,14 @@ function registerMockApiRoute(app, routeConfig) {
             path = tmp[1];
         }
 
-        router[method.toLowerCase()](path, callback);
+        if (router[method.toLowerCase()]) {
+            router[method.toLowerCase()](path, callback);
+        } else {
+            console.warn('非法的 HTTP 动词', method, '跳过该接口');
+            console.log('---------------------------------------------------------');
+            console.warn(tmp.join(' '));
+            console.log('---------------------------------------------------------');
+        }
     }
 
     // 使用 Router 模块化路由定义, 可以快速将路由切换到统一路径下面,
