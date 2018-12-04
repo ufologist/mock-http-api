@@ -99,10 +99,40 @@ function appendApidocRoute(routeConfig, mockInfo) {
 
         if (request.query.map) {
             response.jsonp(mockInfo.mockConfigMap);
+        } else if (request.query.path) {
+            response.jsonp(findDefinedMockFilePath(mockInfo.mockConfigMap, request.query.path));
         } else {
             response.jsonp(mockRoute.groupApiByModuleName(mockInfo.mockConfig));
         }
     };
+}
+
+/**
+ * 从所有接口中找到匹配该路径的接口
+ * 
+ * @param {object} mockConfigMap 接口文件映射
+ * @param {string} path 要查找的接口的 path
+ * @return {object}
+ */
+function findDefinedMockFilePath(mockConfigMap, path) {
+    var found = {};
+    for (var mockFilePath in mockConfigMap) {
+        var api = mockConfigMap[mockFilePath].api;
+        if (api) {
+            for (var apiPath in api) {
+                if (apiPath.indexOf(path) !== -1) {
+                    if (!found[mockFilePath]) {
+                        found[mockFilePath] = {
+                            api: {}
+                        }
+                    }
+
+                    found[mockFilePath].api[apiPath] = api[apiPath];
+                }
+            }
+        }
+    }
+    return found;
 }
 
 /**
